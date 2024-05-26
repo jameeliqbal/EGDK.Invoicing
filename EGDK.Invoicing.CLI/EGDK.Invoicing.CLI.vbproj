@@ -6,4 +6,10 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EGDK.Invoicing.Core\EGDK.Invoicing.Core.vbproj" />
+    <ProjectReference Include="..\EGDK.Invoicing.Data\EGDK.Invoicing.Data.vbproj" />
+    <ProjectReference Include="..\EGDK.Invoicing.Services\EGDK.Invoicing.Services.vbproj" />
+  </ItemGroup>
+
 </Project>

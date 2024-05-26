@@ -5,4 +5,8 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EGDK.Invoicing.Core\EGDK.Invoicing.Core.vbproj" />
+  </ItemGroup>
+
 </Project>
