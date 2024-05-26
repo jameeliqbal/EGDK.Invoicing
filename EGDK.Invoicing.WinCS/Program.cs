@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using EGDK.Invoicing.Services;
 using Microsoft.Extensions.Configuration;
+using EGDK.Invoicing.WinCS.Categories;
 
 namespace EGDK.Invoicing.WinCS
 {
@@ -86,7 +87,7 @@ namespace EGDK.Invoicing.WinCS
 
 
                     services.AddTransient<ICategoryService, CategoryService> ();
-                     services.AddTransient<Form1>();                    
+                     services.AddTransient<CategoryListForm>();                    
                      services.AddTransient<Form2>();
 
                  });

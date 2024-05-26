@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EGDK.Invoicing.WinCS.Categories;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,7 +105,7 @@ namespace EGDK.Invoicing.WinCS
 
         private void categoriesListMenu_Click(object sender, EventArgs e)
         {
-            ShowMyForm<Form1>();
+            ShowMyForm<CategoryListForm>();
         }
 
         private void ShowMyForm<T>()
