@@ -13,7 +13,7 @@ Module Program
 
         host.RunAsync()
         Console.WriteLine("List of Categories")
-        Dim cs = New CategoryService(New UnitOfWork())
+
     End Sub
 
     Function CreateHostBuilder() As IHostBuilder

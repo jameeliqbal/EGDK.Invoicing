@@ -29,11 +29,11 @@ Public Class CategoryService
 
 
     Public Function GetAllWithProducts() As IEnumerable(Of Category) Implements ICategoryService.GetAllWithProducts
-        Throw New NotImplementedException()
+        Return _unitOfWork.Categories.GetAll()
     End Function
 
     Public Function GetCategoryById(id As Integer) As Category Implements ICategoryService.GetCategoryById
-        _unitOfWork.Categories.GetCategoryWithProducts()
+        Return _unitOfWork.Categories.GetCategoryWithProducts()
     End Function
 
     Public Function GetCategoryByProductId(productId As Integer) As IEnumerable(Of Category) Implements ICategoryService.GetCategoryByProductId
