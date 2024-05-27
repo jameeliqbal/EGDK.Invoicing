@@ -1,4 +1,5 @@
-﻿using EGDK.Invoicing.Core.Models;
+﻿
+using EGDK.Invoicing.Core.Models;
 using EGDK.Invoicing.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +14,7 @@ namespace EGDK.Invoicing.Data
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; } 
+        public DbSet<Customer> Customers { get; set; } 
 
         public EGInvoicingDBContext(DbContextOptions<EGInvoicingDBContext>  options)
             :base(options)
@@ -24,6 +26,8 @@ namespace EGDK.Invoicing.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());
+            builder.ApplyConfiguration(new CustomerConfiguration());
         }
     }
 }

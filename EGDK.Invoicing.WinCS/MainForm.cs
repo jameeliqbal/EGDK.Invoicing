@@ -1,4 +1,5 @@
 ﻿using EGDK.Invoicing.WinCS.Categories;
+using EGDK.Invoicing.WinCS.Customers;
 using EGDK.Invoicing.WinCS.Products;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -112,6 +113,11 @@ namespace EGDK.Invoicing.WinCS
         private void productListMenu_Click(object sender, EventArgs e)
         {
             ShowMyForm<ProductsListForm>();
+        }
+
+        private void customerListMenu_Click(object sender, EventArgs e)
+        {
+            ShowMyForm<CustomerListForm>();
         }
 
         private void ShowMyForm<T>()

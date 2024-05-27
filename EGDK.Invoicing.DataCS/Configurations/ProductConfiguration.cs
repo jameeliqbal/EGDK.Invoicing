@@ -39,16 +39,16 @@ namespace EGDK.Invoicing.Data.Configurations
                 .IsRequired();
 
             builder
-                .Property(p => p.CategoryId)
-                .IsRequired(false);
+                .Property(p => p.CategoryId);
+               
 
 
 
             builder
                 .HasOne(p => p.Category)
                 .WithMany(c => c.Products)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .HasForeignKey(p => p.CategoryId);
+          
 
 
         }
