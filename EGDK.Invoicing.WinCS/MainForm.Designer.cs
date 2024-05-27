@@ -43,6 +43,12 @@
             printSetupToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator5 = new ToolStripSeparator();
             exitToolStripMenuItem = new ToolStripMenuItem();
+            categoriesMenu = new ToolStripMenuItem();
+            categoriesListMenu = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            categoryAddMenu = new ToolStripMenuItem();
+            categoryEditMenu = new ToolStripMenuItem();
+            categoryDeleteMenu = new ToolStripMenuItem();
             windowsMenu = new ToolStripMenuItem();
             newWindowToolStripMenuItem = new ToolStripMenuItem();
             cascadeToolStripMenuItem = new ToolStripMenuItem();
@@ -53,19 +59,19 @@
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
-            categoriesMenu = new ToolStripMenuItem();
-            categoriesListMenu = new ToolStripMenuItem();
-            categoryAddMenu = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            categoryEditMenu = new ToolStripMenuItem();
-            categoryDeleteMenu = new ToolStripMenuItem();
+            productsMenu = new ToolStripMenuItem();
+            productListMenu = new ToolStripMenuItem();
+            productAdd = new ToolStripMenuItem();
+            productEditMenu = new ToolStripMenuItem();
+            productDeleteMenu = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, categoriesMenu, windowsMenu });
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, categoriesMenu, productsMenu, windowsMenu });
             menuStrip.Location = new Point(0, 0);
             menuStrip.MdiWindowListItem = windowsMenu;
             menuStrip.Name = "menuStrip";
@@ -163,6 +169,43 @@
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += ExitToolsStripMenuItem_Click;
             // 
+            // categoriesMenu
+            // 
+            categoriesMenu.DropDownItems.AddRange(new ToolStripItem[] { categoriesListMenu, toolStripSeparator1, categoryAddMenu, categoryEditMenu, categoryDeleteMenu });
+            categoriesMenu.Name = "categoriesMenu";
+            categoriesMenu.Size = new Size(75, 20);
+            categoriesMenu.Text = "Categories";
+            // 
+            // categoriesListMenu
+            // 
+            categoriesListMenu.Name = "categoriesListMenu";
+            categoriesListMenu.Size = new Size(180, 22);
+            categoriesListMenu.Text = "Categories List";
+            categoriesListMenu.Click += categoriesListMenu_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
+            // 
+            // categoryAddMenu
+            // 
+            categoryAddMenu.Name = "categoryAddMenu";
+            categoryAddMenu.Size = new Size(180, 22);
+            categoryAddMenu.Text = "Add Category";
+            // 
+            // categoryEditMenu
+            // 
+            categoryEditMenu.Name = "categoryEditMenu";
+            categoryEditMenu.Size = new Size(180, 22);
+            categoryEditMenu.Text = "Edit Category";
+            // 
+            // categoryDeleteMenu
+            // 
+            categoryDeleteMenu.Name = "categoryDeleteMenu";
+            categoryDeleteMenu.Size = new Size(180, 22);
+            categoryDeleteMenu.Text = "Delete Category";
+            // 
             // windowsMenu
             // 
             windowsMenu.DropDownItems.AddRange(new ToolStripItem[] { newWindowToolStripMenuItem, cascadeToolStripMenuItem, tileVerticalToolStripMenuItem, tileHorizontalToolStripMenuItem, closeAllToolStripMenuItem, arrangeIconsToolStripMenuItem });
@@ -173,42 +216,42 @@
             // newWindowToolStripMenuItem
             // 
             newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            newWindowToolStripMenuItem.Size = new Size(180, 22);
+            newWindowToolStripMenuItem.Size = new Size(150, 22);
             newWindowToolStripMenuItem.Text = "&New Window";
             newWindowToolStripMenuItem.Click += ShowNewForm;
             // 
             // cascadeToolStripMenuItem
             // 
             cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            cascadeToolStripMenuItem.Size = new Size(180, 22);
+            cascadeToolStripMenuItem.Size = new Size(150, 22);
             cascadeToolStripMenuItem.Text = "&Cascade";
             cascadeToolStripMenuItem.Click += CascadeToolStripMenuItem_Click;
             // 
             // tileVerticalToolStripMenuItem
             // 
             tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            tileVerticalToolStripMenuItem.Size = new Size(180, 22);
+            tileVerticalToolStripMenuItem.Size = new Size(150, 22);
             tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             tileVerticalToolStripMenuItem.Click += TileVerticalToolStripMenuItem_Click;
             // 
             // tileHorizontalToolStripMenuItem
             // 
             tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            tileHorizontalToolStripMenuItem.Size = new Size(180, 22);
+            tileHorizontalToolStripMenuItem.Size = new Size(150, 22);
             tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             tileHorizontalToolStripMenuItem.Click += TileHorizontalToolStripMenuItem_Click;
             // 
             // closeAllToolStripMenuItem
             // 
             closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            closeAllToolStripMenuItem.Size = new Size(180, 22);
+            closeAllToolStripMenuItem.Size = new Size(150, 22);
             closeAllToolStripMenuItem.Text = "C&lose All";
             closeAllToolStripMenuItem.Click += CloseAllToolStripMenuItem_Click;
             // 
             // arrangeIconsToolStripMenuItem
             // 
             arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            arrangeIconsToolStripMenuItem.Size = new Size(180, 22);
+            arrangeIconsToolStripMenuItem.Size = new Size(150, 22);
             arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             arrangeIconsToolStripMenuItem.Click += ArrangeIconsToolStripMenuItem_Click;
             // 
@@ -228,42 +271,42 @@
             toolStripStatusLabel.Size = new Size(39, 17);
             toolStripStatusLabel.Text = "Status";
             // 
-            // categoriesMenu
+            // productsMenu
             // 
-            categoriesMenu.DropDownItems.AddRange(new ToolStripItem[] { categoriesListMenu, toolStripSeparator1, categoryAddMenu, categoryEditMenu, categoryDeleteMenu });
-            categoriesMenu.Name = "categoriesMenu";
-            categoriesMenu.Size = new Size(75, 20);
-            categoriesMenu.Text = "Categories";
+            productsMenu.DropDownItems.AddRange(new ToolStripItem[] { productListMenu, toolStripSeparator2, productAdd, productEditMenu, productDeleteMenu });
+            productsMenu.Name = "productsMenu";
+            productsMenu.Size = new Size(66, 20);
+            productsMenu.Text = "Products";
             // 
-            // categoriesListMenu
+            // productListMenu
             // 
-            categoriesListMenu.Name = "categoriesListMenu";
-            categoriesListMenu.Size = new Size(180, 22);
-            categoriesListMenu.Text = "Categories List";
-            categoriesListMenu.Click += categoriesListMenu_Click;
+            productListMenu.Name = "productListMenu";
+            productListMenu.Size = new Size(180, 22);
+            productListMenu.Text = "Products List";
+            productListMenu.Click += productListMenu_Click;
             // 
-            // categoryAddMenu
+            // productAdd
             // 
-            categoryAddMenu.Name = "categoryAddMenu";
-            categoryAddMenu.Size = new Size(180, 22);
-            categoryAddMenu.Text = "Add Category";
+            productAdd.Name = "productAdd";
+            productAdd.Size = new Size(180, 22);
+            productAdd.Text = "Add Product";
             // 
-            // toolStripSeparator1
+            // productEditMenu
             // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            productEditMenu.Name = "productEditMenu";
+            productEditMenu.Size = new Size(180, 22);
+            productEditMenu.Text = "Edit Product";
             // 
-            // categoryEditMenu
+            // productDeleteMenu
             // 
-            categoryEditMenu.Name = "categoryEditMenu";
-            categoryEditMenu.Size = new Size(180, 22);
-            categoryEditMenu.Text = "Edit Category";
+            productDeleteMenu.Name = "productDeleteMenu";
+            productDeleteMenu.Size = new Size(180, 22);
+            productDeleteMenu.Text = "Delete Product";
             // 
-            // categoryDeleteMenu
+            // toolStripSeparator2
             // 
-            categoryDeleteMenu.Name = "categoryDeleteMenu";
-            categoryDeleteMenu.Size = new Size(180, 22);
-            categoryDeleteMenu.Text = "Delete Category";
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // MainForm
             // 
@@ -317,6 +360,12 @@
         private ToolStripMenuItem categoryAddMenu;
         private ToolStripMenuItem categoryEditMenu;
         private ToolStripMenuItem categoryDeleteMenu;
+        private ToolStripMenuItem productsMenu;
+        private ToolStripMenuItem productListMenu;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem productAdd;
+        private ToolStripMenuItem productEditMenu;
+        private ToolStripMenuItem productDeleteMenu;
     }
 }
 

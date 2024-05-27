@@ -24,12 +24,7 @@ namespace EGDK.Invoicing.Data.Configurations
                 .Property(c => c.Name)
                 .IsRequired()
                 .HasMaxLength(50);
-
-            //builder
-            //    .HasOne(m => m.Product)
-            //    .WithMany(a => a.Categories)
-            //    .HasForeignKey(m => m.ArtistId);
-
+ 
             builder
                 .ToTable("Categories");
         }

@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EGDK.Invoicing.Core\EGDK.Invoicing.Core.vbproj" />
+    <ProjectReference Include="..\EGDK.Invoicing.DataCS\EGDK.Invoicing.DataCS.csproj" />
   </ItemGroup>
 
 </Project>

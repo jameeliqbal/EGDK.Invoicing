@@ -1,4 +1,5 @@
 ﻿using EGDK.Invoicing.WinCS.Categories;
+using EGDK.Invoicing.WinCS.Products;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -108,9 +109,14 @@ namespace EGDK.Invoicing.WinCS
             ShowMyForm<CategoryListForm>();
         }
 
+        private void productListMenu_Click(object sender, EventArgs e)
+        {
+            ShowMyForm<ProductsListForm>();
+        }
+
         private void ShowMyForm<T>()
         {
-            var formToShow = Program.ServiceProvider.GetRequiredService<T>() as Form ;
+            var formToShow = Program.ServiceProvider.GetRequiredService<T>() as Form;
             formToShow.MdiParent = this;
             formToShow.WindowState = FormWindowState.Maximized;
             formToShow.Show();

@@ -3,7 +3,7 @@ Imports EGDK.Invoicing.Core.Models
 
 Namespace Services
     Public Interface ICategoryService
-        Function GetAllWithProducts() As IEnumerable(Of Category)
+        Function GetAllCategories() As IEnumerable(Of Category)
         Function GetCategoryById(id As Integer) As Category
         Function GetCategoryByProductId(productId As Integer) As IEnumerable(Of Category)
         Function CreateCategory(newCategory As Category) As Category

@@ -12,6 +12,7 @@ namespace EGDK.Invoicing.Data
     public class EGInvoicingDBContext: DbContext
     {
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; } 
 
         public EGInvoicingDBContext(DbContextOptions<EGInvoicingDBContext>  options)
             :base(options)

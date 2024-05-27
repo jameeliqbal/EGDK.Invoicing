@@ -28,12 +28,12 @@ Public Class CategoryService
     End Sub
 
 
-    Public Function GetAllWithProducts() As IEnumerable(Of Category) Implements ICategoryService.GetAllWithProducts
+    Public Function GetAllCategories() As IEnumerable(Of Category) Implements ICategoryService.GetAllCategories
         Return _unitOfWork.Categories.GetAll()
     End Function
 
     Public Function GetCategoryById(id As Integer) As Category Implements ICategoryService.GetCategoryById
-        Return _unitOfWork.Categories.GetCategoryWithProducts()
+        Return _unitOfWork.Categories.GetById(id)
     End Function
 
     Public Function GetCategoryByProductId(productId As Integer) As IEnumerable(Of Category) Implements ICategoryService.GetCategoryByProductId

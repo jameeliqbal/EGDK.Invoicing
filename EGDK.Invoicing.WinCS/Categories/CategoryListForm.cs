@@ -23,7 +23,7 @@ namespace EGDK.Invoicing.WinCS.Categories
 
         private void CategoryListForm_Load(object sender, EventArgs e)
         {
-            var categories = categoryService.GetAllWithProducts();
+            var categories = categoryService.GetAllCategories();
             dgvCategoryies.DataSource = categories;
         }
     }

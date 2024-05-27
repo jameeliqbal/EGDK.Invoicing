@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using EGDK.Invoicing.Services;
 using Microsoft.Extensions.Configuration;
 using EGDK.Invoicing.WinCS.Categories;
+using EGDK.Invoicing.WinCS.Products;
 
 namespace EGDK.Invoicing.WinCS
 {
@@ -29,8 +30,7 @@ namespace EGDK.Invoicing.WinCS
 
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
-            //Application.Run(ServiceProvider.GetRequiredService<Form1>());
-            //host.RunAsync();
+      
 
             Application.Run(new MainForm());
         }
@@ -51,25 +51,9 @@ namespace EGDK.Invoicing.WinCS
                          (hcontext, options) =>
                          {
                              //'options.UseSqlServer(Configuration.GetConnectionString("Default"),
-
-
-
-
                              // 'Sub(x)
-
-
-
-
                              // '    x.MigrationsAssembly("MyMusic.Data")
-
-
-
-
                              //  'End Sub)
-
-
-
-
                              //options.UseSqlServer("name=ConnectionStrings:Default",
                              //                     x => x.MigrationsAssembly("EGDK.Invoicing.DataCS")
                              //                     );
@@ -77,18 +61,16 @@ namespace EGDK.Invoicing.WinCS
                              options.UseSqlServer(connectionString,
                                                   x => x.MigrationsAssembly("EGDK.Invoicing.DataCS")
                                                   );
-
-
-
                          });
 
 
                      services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+                     services.AddTransient<ICategoryService, CategoryService>();
+                     services.AddTransient<IProductService, ProductService>();
 
-                    services.AddTransient<ICategoryService, CategoryService> ();
-                     services.AddTransient<CategoryListForm>();                    
-                     services.AddTransient<Form2>();
+                     services.AddTransient<CategoryListForm>();
+                     services.AddTransient<ProductsListForm>();                    
 
                  });
     }
