@@ -1,5 +1,6 @@
 ﻿using EGDK.Invoicing.WinCS.Categories;
 using EGDK.Invoicing.WinCS.Customers;
+using EGDK.Invoicing.WinCS.Invoices;
 using EGDK.Invoicing.WinCS.Products;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -120,12 +121,23 @@ namespace EGDK.Invoicing.WinCS
             ShowMyForm<CustomerListForm>();
         }
 
-        private void ShowMyForm<T>()
+        private void InoviceListMenu_Click(object sender, EventArgs e)
+        {
+            ShowMyForm<InvoiceListForm>();
+        }
+
+        private void InvoiceDetailsMenu_Click(object sender, EventArgs e)
+        {
+            var form = ShowMyForm<InvoiceDetailsForm>() as InvoiceDetailsForm;
+        }
+
+        private Form ShowMyForm<T>()
         {
             var formToShow = Program.ServiceProvider.GetRequiredService<T>() as Form;
             formToShow.MdiParent = this;
             formToShow.WindowState = FormWindowState.Maximized;
             formToShow.Show();
+            return formToShow;
         }
     }
 }

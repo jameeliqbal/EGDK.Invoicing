@@ -55,6 +55,19 @@
             productAdd = new ToolStripMenuItem();
             productEditMenu = new ToolStripMenuItem();
             productDeleteMenu = new ToolStripMenuItem();
+            customersMenu = new ToolStripMenuItem();
+            customerListMenu = new ToolStripMenuItem();
+            toolStripSeparator6 = new ToolStripSeparator();
+            customerAddMenu = new ToolStripMenuItem();
+            customerEditMenu = new ToolStripMenuItem();
+            customerDeleteMenu = new ToolStripMenuItem();
+            InvoicesMenu = new ToolStripMenuItem();
+            InoviceListMenu = new ToolStripMenuItem();
+            toolStripSeparator7 = new ToolStripSeparator();
+            InvoiceDetailsMenu = new ToolStripMenuItem();
+            InvoiceAddMenu = new ToolStripMenuItem();
+            InvoiceEditMenu = new ToolStripMenuItem();
+            InvoiceDeleteMenu = new ToolStripMenuItem();
             windowsMenu = new ToolStripMenuItem();
             newWindowToolStripMenuItem = new ToolStripMenuItem();
             cascadeToolStripMenuItem = new ToolStripMenuItem();
@@ -65,19 +78,13 @@
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
-            customersMenu = new ToolStripMenuItem();
-            customerListMenu = new ToolStripMenuItem();
-            customerAddMenu = new ToolStripMenuItem();
-            customerEditMenu = new ToolStripMenuItem();
-            customerDeleteMenu = new ToolStripMenuItem();
-            toolStripSeparator6 = new ToolStripSeparator();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, categoriesMenu, productsMenu, customersMenu, windowsMenu });
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, categoriesMenu, productsMenu, customersMenu, InvoicesMenu, windowsMenu });
             menuStrip.Location = new Point(0, 0);
             menuStrip.MdiWindowListItem = windowsMenu;
             menuStrip.Name = "menuStrip";
@@ -222,32 +229,113 @@
             // productListMenu
             // 
             productListMenu.Name = "productListMenu";
-            productListMenu.Size = new Size(180, 22);
+            productListMenu.Size = new Size(152, 22);
             productListMenu.Text = "Products List";
             productListMenu.Click += productListMenu_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(149, 6);
             // 
             // productAdd
             // 
             productAdd.Name = "productAdd";
-            productAdd.Size = new Size(180, 22);
+            productAdd.Size = new Size(152, 22);
             productAdd.Text = "Add Product";
             // 
             // productEditMenu
             // 
             productEditMenu.Name = "productEditMenu";
-            productEditMenu.Size = new Size(180, 22);
+            productEditMenu.Size = new Size(152, 22);
             productEditMenu.Text = "Edit Product";
             // 
             // productDeleteMenu
             // 
             productDeleteMenu.Name = "productDeleteMenu";
-            productDeleteMenu.Size = new Size(180, 22);
+            productDeleteMenu.Size = new Size(152, 22);
             productDeleteMenu.Text = "Delete Product";
+            // 
+            // customersMenu
+            // 
+            customersMenu.DropDownItems.AddRange(new ToolStripItem[] { customerListMenu, toolStripSeparator6, customerAddMenu, customerEditMenu, customerDeleteMenu });
+            customersMenu.Name = "customersMenu";
+            customersMenu.Size = new Size(76, 20);
+            customersMenu.Text = "Customers";
+            // 
+            // customerListMenu
+            // 
+            customerListMenu.Name = "customerListMenu";
+            customerListMenu.Size = new Size(162, 22);
+            customerListMenu.Text = "Customers List";
+            customerListMenu.Click += customerListMenu_Click;
+            // 
+            // toolStripSeparator6
+            // 
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new Size(159, 6);
+            // 
+            // customerAddMenu
+            // 
+            customerAddMenu.Name = "customerAddMenu";
+            customerAddMenu.Size = new Size(162, 22);
+            customerAddMenu.Text = "Add Customer";
+            // 
+            // customerEditMenu
+            // 
+            customerEditMenu.Name = "customerEditMenu";
+            customerEditMenu.Size = new Size(162, 22);
+            customerEditMenu.Text = "Edit Customer";
+            // 
+            // customerDeleteMenu
+            // 
+            customerDeleteMenu.Name = "customerDeleteMenu";
+            customerDeleteMenu.Size = new Size(162, 22);
+            customerDeleteMenu.Text = "Delete Customer";
+            // 
+            // InvoicesMenu
+            // 
+            InvoicesMenu.DropDownItems.AddRange(new ToolStripItem[] { InoviceListMenu, toolStripSeparator7, InvoiceDetailsMenu, InvoiceAddMenu, InvoiceEditMenu, InvoiceDeleteMenu });
+            InvoicesMenu.Name = "InvoicesMenu";
+            InvoicesMenu.Size = new Size(62, 20);
+            InvoicesMenu.Text = "Invoices";
+            // 
+            // InoviceListMenu
+            // 
+            InoviceListMenu.Name = "InoviceListMenu";
+            InoviceListMenu.Size = new Size(180, 22);
+            InoviceListMenu.Text = "Invoice List";
+            InoviceListMenu.Click += InoviceListMenu_Click;
+            // 
+            // toolStripSeparator7
+            // 
+            toolStripSeparator7.Name = "toolStripSeparator7";
+            toolStripSeparator7.Size = new Size(177, 6);
+            // 
+            // InvoiceDetailsMenu
+            // 
+            InvoiceDetailsMenu.Name = "InvoiceDetailsMenu";
+            InvoiceDetailsMenu.Size = new Size(180, 22);
+            InvoiceDetailsMenu.Text = "Invoice Details";
+            InvoiceDetailsMenu.Click += InvoiceDetailsMenu_Click;
+            // 
+            // InvoiceAddMenu
+            // 
+            InvoiceAddMenu.Name = "InvoiceAddMenu";
+            InvoiceAddMenu.Size = new Size(180, 22);
+            InvoiceAddMenu.Text = "Add Invoice";
+            // 
+            // InvoiceEditMenu
+            // 
+            InvoiceEditMenu.Name = "InvoiceEditMenu";
+            InvoiceEditMenu.Size = new Size(180, 22);
+            InvoiceEditMenu.Text = "Edit Invoice";
+            // 
+            // InvoiceDeleteMenu
+            // 
+            InvoiceDeleteMenu.Name = "InvoiceDeleteMenu";
+            InvoiceDeleteMenu.Size = new Size(180, 22);
+            InvoiceDeleteMenu.Text = "Delete Invoice";
             // 
             // windowsMenu
             // 
@@ -259,42 +347,42 @@
             // newWindowToolStripMenuItem
             // 
             newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            newWindowToolStripMenuItem.Size = new Size(180, 22);
+            newWindowToolStripMenuItem.Size = new Size(150, 22);
             newWindowToolStripMenuItem.Text = "&New Window";
             newWindowToolStripMenuItem.Click += ShowNewForm;
             // 
             // cascadeToolStripMenuItem
             // 
             cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            cascadeToolStripMenuItem.Size = new Size(180, 22);
+            cascadeToolStripMenuItem.Size = new Size(150, 22);
             cascadeToolStripMenuItem.Text = "&Cascade";
             cascadeToolStripMenuItem.Click += CascadeToolStripMenuItem_Click;
             // 
             // tileVerticalToolStripMenuItem
             // 
             tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            tileVerticalToolStripMenuItem.Size = new Size(180, 22);
+            tileVerticalToolStripMenuItem.Size = new Size(150, 22);
             tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             tileVerticalToolStripMenuItem.Click += TileVerticalToolStripMenuItem_Click;
             // 
             // tileHorizontalToolStripMenuItem
             // 
             tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            tileHorizontalToolStripMenuItem.Size = new Size(180, 22);
+            tileHorizontalToolStripMenuItem.Size = new Size(150, 22);
             tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             tileHorizontalToolStripMenuItem.Click += TileHorizontalToolStripMenuItem_Click;
             // 
             // closeAllToolStripMenuItem
             // 
             closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            closeAllToolStripMenuItem.Size = new Size(180, 22);
+            closeAllToolStripMenuItem.Size = new Size(150, 22);
             closeAllToolStripMenuItem.Text = "C&lose All";
             closeAllToolStripMenuItem.Click += CloseAllToolStripMenuItem_Click;
             // 
             // arrangeIconsToolStripMenuItem
             // 
             arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            arrangeIconsToolStripMenuItem.Size = new Size(180, 22);
+            arrangeIconsToolStripMenuItem.Size = new Size(150, 22);
             arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             arrangeIconsToolStripMenuItem.Click += ArrangeIconsToolStripMenuItem_Click;
             // 
@@ -313,43 +401,6 @@
             toolStripStatusLabel.Name = "toolStripStatusLabel";
             toolStripStatusLabel.Size = new Size(39, 17);
             toolStripStatusLabel.Text = "Status";
-            // 
-            // customersMenu
-            // 
-            customersMenu.DropDownItems.AddRange(new ToolStripItem[] { customerListMenu, toolStripSeparator6, customerAddMenu, customerEditMenu, customerDeleteMenu });
-            customersMenu.Name = "customersMenu";
-            customersMenu.Size = new Size(76, 20);
-            customersMenu.Text = "Customers";
-            // 
-            // customerListMenu
-            // 
-            customerListMenu.Name = "customerListMenu";
-            customerListMenu.Size = new Size(180, 22);
-            customerListMenu.Text = "Customers List";
-            customerListMenu.Click += customerListMenu_Click;
-            // 
-            // customerAddMenu
-            // 
-            customerAddMenu.Name = "customerAddMenu";
-            customerAddMenu.Size = new Size(180, 22);
-            customerAddMenu.Text = "Add Customer";
-            // 
-            // customerEditMenu
-            // 
-            customerEditMenu.Name = "customerEditMenu";
-            customerEditMenu.Size = new Size(180, 22);
-            customerEditMenu.Text = "Edit Customer";
-            // 
-            // customerDeleteMenu
-            // 
-            customerDeleteMenu.Name = "customerDeleteMenu";
-            customerDeleteMenu.Size = new Size(180, 22);
-            customerDeleteMenu.Text = "Delete Customer";
-            // 
-            // toolStripSeparator6
-            // 
-            toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(177, 6);
             // 
             // MainForm
             // 
@@ -415,6 +466,13 @@
         private ToolStripMenuItem customerAddMenu;
         private ToolStripMenuItem customerEditMenu;
         private ToolStripMenuItem customerDeleteMenu;
+        private ToolStripMenuItem InvoicesMenu;
+        private ToolStripMenuItem InoviceListMenu;
+        private ToolStripSeparator toolStripSeparator7;
+        private ToolStripMenuItem InvoiceDetailsMenu;
+        private ToolStripMenuItem InvoiceAddMenu;
+        private ToolStripMenuItem InvoiceEditMenu;
+        private ToolStripMenuItem InvoiceDeleteMenu;
     }
 }
 

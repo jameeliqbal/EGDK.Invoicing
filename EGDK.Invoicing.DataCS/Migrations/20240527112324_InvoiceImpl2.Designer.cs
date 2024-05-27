@@ -4,6 +4,7 @@ using EGDK.Invoicing.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EGDK.Invoicing.Data.Migrations
 {
     [DbContext(typeof(EGInvoicingDBContext))]
-    partial class EGInvoicingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240527112324_InvoiceImpl2")]
+    partial class InvoiceImpl2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,7 +123,7 @@ namespace EGDK.Invoicing.Data.Migrations
                     b.Property<int>("InvoiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProdcutId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")

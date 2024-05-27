@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using EGDK.Invoicing.WinCS.Categories;
 using EGDK.Invoicing.WinCS.Products;
 using EGDK.Invoicing.WinCS.Customers;
+using EGDK.Invoicing.WinCS.Invoices;
 
 namespace EGDK.Invoicing.WinCS
 {
@@ -70,10 +71,12 @@ namespace EGDK.Invoicing.WinCS
                      services.AddTransient<ICategoryService, CategoryService>();
                      services.AddTransient<IProductService, ProductService>();
                      services.AddTransient<ICustomerService, CustomerService>();
+                     services.AddTransient<IInvoiceService, InvoiceService>();
                      
                      services.AddTransient<CategoryListForm>();
                      services.AddTransient<ProductsListForm>();
                      services.AddTransient<CustomerListForm>();
+                     services.AddTransient<InvoiceListForm>();
 
                  });
     }
