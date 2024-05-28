@@ -1,4 +1,5 @@
 ﻿using EGDK.Invoicing.Core;
+using EGDK.Invoicing.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,17 +14,17 @@ namespace EGDK.Invoicing.WinCS.Customers
 {
     public partial class CustomerListForm : Form
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ICustomerService customerService;
 
-        public CustomerListForm(IUnitOfWork unitOfWork)
+        public CustomerListForm(ICustomerService customerService)
         {
             InitializeComponent();
-            _unitOfWork = unitOfWork;
+            this.customerService = customerService;
         }
 
         private void CustomerListForm_Load(object sender, EventArgs e)
         {
-            dgvCustomers.DataSource = _unitOfWork.Customers.GetAll();
+            dgvCustomers.DataSource = customerService.GetAllCustomers();
         }
     }
 }

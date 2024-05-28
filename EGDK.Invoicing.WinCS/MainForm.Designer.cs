@@ -200,24 +200,28 @@
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(155, 6);
+            toolStripSeparator1.Visible = false;
             // 
             // categoryAddMenu
             // 
             categoryAddMenu.Name = "categoryAddMenu";
             categoryAddMenu.Size = new Size(158, 22);
             categoryAddMenu.Text = "Add Category";
+            categoryAddMenu.Visible = false;
             // 
             // categoryEditMenu
             // 
             categoryEditMenu.Name = "categoryEditMenu";
             categoryEditMenu.Size = new Size(158, 22);
             categoryEditMenu.Text = "Edit Category";
+            categoryEditMenu.Visible = false;
             // 
             // categoryDeleteMenu
             // 
             categoryDeleteMenu.Name = "categoryDeleteMenu";
             categoryDeleteMenu.Size = new Size(158, 22);
             categoryDeleteMenu.Text = "Delete Category";
+            categoryDeleteMenu.Visible = false;
             // 
             // productsMenu
             // 
@@ -237,24 +241,28 @@
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(149, 6);
+            toolStripSeparator2.Visible = false;
             // 
             // productAdd
             // 
             productAdd.Name = "productAdd";
             productAdd.Size = new Size(152, 22);
             productAdd.Text = "Add Product";
+            productAdd.Visible = false;
             // 
             // productEditMenu
             // 
             productEditMenu.Name = "productEditMenu";
             productEditMenu.Size = new Size(152, 22);
             productEditMenu.Text = "Edit Product";
+            productEditMenu.Visible = false;
             // 
             // productDeleteMenu
             // 
             productDeleteMenu.Name = "productDeleteMenu";
             productDeleteMenu.Size = new Size(152, 22);
             productDeleteMenu.Text = "Delete Product";
+            productDeleteMenu.Visible = false;
             // 
             // customersMenu
             // 
@@ -274,24 +282,28 @@
             // 
             toolStripSeparator6.Name = "toolStripSeparator6";
             toolStripSeparator6.Size = new Size(159, 6);
+            toolStripSeparator6.Visible = false;
             // 
             // customerAddMenu
             // 
             customerAddMenu.Name = "customerAddMenu";
             customerAddMenu.Size = new Size(162, 22);
             customerAddMenu.Text = "Add Customer";
+            customerAddMenu.Visible = false;
             // 
             // customerEditMenu
             // 
             customerEditMenu.Name = "customerEditMenu";
             customerEditMenu.Size = new Size(162, 22);
             customerEditMenu.Text = "Edit Customer";
+            customerEditMenu.Visible = false;
             // 
             // customerDeleteMenu
             // 
             customerDeleteMenu.Name = "customerDeleteMenu";
             customerDeleteMenu.Size = new Size(162, 22);
             customerDeleteMenu.Text = "Delete Customer";
+            customerDeleteMenu.Visible = false;
             // 
             // InvoicesMenu
             // 
@@ -324,18 +336,21 @@
             InvoiceAddMenu.Name = "InvoiceAddMenu";
             InvoiceAddMenu.Size = new Size(180, 22);
             InvoiceAddMenu.Text = "Add Invoice";
+            InvoiceAddMenu.Click += InvoiceAddMenu_Click;
             // 
             // InvoiceEditMenu
             // 
             InvoiceEditMenu.Name = "InvoiceEditMenu";
             InvoiceEditMenu.Size = new Size(180, 22);
             InvoiceEditMenu.Text = "Edit Invoice";
+            InvoiceEditMenu.Visible = false;
             // 
             // InvoiceDeleteMenu
             // 
             InvoiceDeleteMenu.Name = "InvoiceDeleteMenu";
             InvoiceDeleteMenu.Size = new Size(180, 22);
             InvoiceDeleteMenu.Text = "Delete Invoice";
+            InvoiceDeleteMenu.Visible = false;
             // 
             // windowsMenu
             // 

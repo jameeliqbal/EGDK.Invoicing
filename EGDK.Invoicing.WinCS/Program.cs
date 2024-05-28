@@ -77,6 +77,9 @@ namespace EGDK.Invoicing.WinCS
                      services.AddTransient<ProductsListForm>();
                      services.AddTransient<CustomerListForm>();
                      services.AddTransient<InvoiceListForm>();
+                     services.AddTransient<InvoiceDetailsForm>();
+                     services.AddTransient<InvoiceAddForm>();
+                     services.AddTransient<InvoiceLineItemAddForm>();
 
                  });
     }

@@ -14,7 +14,7 @@
         Public Property Discount As Double
         Public Property IsDiscountInPercentage As Boolean
         Public Property PaymentMode As String
-        Public Property LineItems As List(Of LineItem)
+        Public Property LineItems As List(Of LineItem) = New List(Of LineItem)
 
         Public Property CustomerId As Integer
         Public Property Customer As Customer

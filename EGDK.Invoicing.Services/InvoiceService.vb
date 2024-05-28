@@ -21,6 +21,7 @@ Public Class InvoiceService
 
     Public Function CreateInvoice(newInvoice As Invoice) As Invoice Implements IInvoiceService.CreateInvoice
         unitOfWork.Invoices.Add(newInvoice)
+        unitOfWork.LineItems.AddRange(newInvoice.LineItems)
         unitOfWork.Commit()
         Return newInvoice
     End Function
@@ -37,6 +38,20 @@ Public Class InvoiceService
     Public Sub DeleteInvoice(Invoice As Invoice) Implements IInvoiceService.DeleteInvoice
         unitOfWork.Invoices.Remove(Invoice)
         unitOfWork.Commit()
-        unitOfWork.Invoices.GetLineItems()
     End Sub
+
+    'Public Function GetLineItemsTotal(id As Integer) As Double
+    'End Function
+
+    'Public Function GetLineItems(id As Integer) As IEnumerable(Of LineItem)
+    'End Function
+
+    Private Function IInvoiceService_GetLineItemsTotal(id As Integer) As Double Implements IInvoiceService.GetLineItemsTotal
+        Return unitOfWork.LineItems.GetLineItemTotal(id)
+    End Function
+
+    Private Function IInvoiceService_GetLineItems(id As Integer) As IEnumerable(Of LineItem) Implements IInvoiceService.GetLineItems
+        Return unitOfWork.LineItems.GetLineItems(id)
+
+    End Function
 End Class

@@ -7,6 +7,7 @@ Public Interface IUnitOfWork
     ReadOnly Property Products As IProductRepository
     ReadOnly Property Customers As ICustomerRepository
     ReadOnly Property Invoices As IInvoiceRepository
+    ReadOnly Property LineItems As ILineItemRepository
 
     Function Commit() As Integer
 End Interface

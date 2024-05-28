@@ -1,4 +1,5 @@
-﻿using EGDK.Invoicing.WinCS.Categories;
+﻿using EGDK.Invoicing.Core.Models;
+using EGDK.Invoicing.WinCS.Categories;
 using EGDK.Invoicing.WinCS.Customers;
 using EGDK.Invoicing.WinCS.Invoices;
 using EGDK.Invoicing.WinCS.Products;
@@ -129,6 +130,16 @@ namespace EGDK.Invoicing.WinCS
         private void InvoiceDetailsMenu_Click(object sender, EventArgs e)
         {
             var form = ShowMyForm<InvoiceDetailsForm>() as InvoiceDetailsForm;
+            var f = MdiChildren.SingleOrDefault(f => f.Name == "InvoiceListForm");
+            if (f is null) return;
+            var ilf = f as InvoiceListForm;
+            var selectedInvoice = ilf.dgvInvoices.SelectedRows[0].DataBoundItem as Invoice;
+            form.DislpayInvoiceDetails(selectedInvoice);
+        }
+
+        private void InvoiceAddMenu_Click(object sender, EventArgs e)
+        {
+            ShowMyForm<InvoiceAddForm>();
         }
 
         private Form ShowMyForm<T>()

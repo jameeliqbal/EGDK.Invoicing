@@ -62,6 +62,6 @@
 
         #endregion
 
-        private DataGridView dgvInvoices;
+        public DataGridView dgvInvoices;
     }
 }

@@ -18,6 +18,7 @@ namespace EGDK.Invoicing.Data
         private ProductRepository _productRepository;
         private CustomerRepository _customerRepository;
         private InvoiceRepository _invoiceRepository;
+        private LineItemRepository _lineItemRepository;
         
         public UnitOfWork(EGInvoicingDBContext context)
         {
@@ -28,6 +29,7 @@ namespace EGDK.Invoicing.Data
         public IProductRepository Products => _productRepository = _productRepository ?? new  ProductRepository(_context);
         public ICustomerRepository Customers => _customerRepository = _customerRepository ?? new  CustomerRepository(_context);
         public IInvoiceRepository Invoices => _invoiceRepository = _invoiceRepository ?? new  InvoiceRepository(_context);
+        public ILineItemRepository LineItems => _lineItemRepository = _lineItemRepository ?? new  LineItemRepository(_context);
 
         public int Commit()
         {

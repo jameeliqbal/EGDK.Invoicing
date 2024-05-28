@@ -1,6 +1,6 @@
 ﻿namespace EGDK.Invoicing.WinCS.Invoices
 {
-    partial class InvoiceDetailsForm
+    partial class InvoiceAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            btnAddLineItem = new Button();
+            btnSaveInvoice = new Button();
+            chkIsPercentage = new CheckBox();
+            cmbPaymentMode = new ComboBox();
+            cmbCustomer = new ComboBox();
+            dtInvoiceDate = new DateTimePicker();
+            txtInvoiceNumber = new TextBox();
+            txtDiscountAmount = new TextBox();
             label16 = new Label();
             label4 = new Label();
             label15 = new Label();
@@ -37,13 +45,8 @@
             label2 = new Label();
             lblGrandTotal = new Label();
             lblTax = new Label();
-            lblPaymentMode = new Label();
-            lblDiscount = new Label();
-            lblCustomer = new Label();
             lblSubTotal = new Label();
-            lblInvoiceDate = new Label();
             label9 = new Label();
-            lblInvoiceNumber = new Label();
             label1 = new Label();
             dgvLineItems = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -62,6 +65,14 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(btnAddLineItem);
+            splitContainer1.Panel1.Controls.Add(btnSaveInvoice);
+            splitContainer1.Panel1.Controls.Add(chkIsPercentage);
+            splitContainer1.Panel1.Controls.Add(cmbPaymentMode);
+            splitContainer1.Panel1.Controls.Add(cmbCustomer);
+            splitContainer1.Panel1.Controls.Add(dtInvoiceDate);
+            splitContainer1.Panel1.Controls.Add(txtInvoiceNumber);
+            splitContainer1.Panel1.Controls.Add(txtDiscountAmount);
             splitContainer1.Panel1.Controls.Add(label16);
             splitContainer1.Panel1.Controls.Add(label4);
             splitContainer1.Panel1.Controls.Add(label15);
@@ -70,26 +81,97 @@
             splitContainer1.Panel1.Controls.Add(label2);
             splitContainer1.Panel1.Controls.Add(lblGrandTotal);
             splitContainer1.Panel1.Controls.Add(lblTax);
-            splitContainer1.Panel1.Controls.Add(lblPaymentMode);
-            splitContainer1.Panel1.Controls.Add(lblDiscount);
-            splitContainer1.Panel1.Controls.Add(lblCustomer);
             splitContainer1.Panel1.Controls.Add(lblSubTotal);
-            splitContainer1.Panel1.Controls.Add(lblInvoiceDate);
             splitContainer1.Panel1.Controls.Add(label9);
-            splitContainer1.Panel1.Controls.Add(lblInvoiceNumber);
             splitContainer1.Panel1.Controls.Add(label1);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dgvLineItems);
-            splitContainer1.Size = new Size(800, 450);
-            splitContainer1.SplitterDistance = 181;
-            splitContainer1.TabIndex = 0;
+            splitContainer1.Size = new Size(976, 556);
+            splitContainer1.SplitterDistance = 223;
+            splitContainer1.TabIndex = 1;
+            // 
+            // btnAddLineItem
+            // 
+            btnAddLineItem.Location = new Point(872, 196);
+            btnAddLineItem.Name = "btnAddLineItem";
+            btnAddLineItem.Size = new Size(92, 24);
+            btnAddLineItem.TabIndex = 6;
+            btnAddLineItem.Text = "Add Line Item";
+            btnAddLineItem.UseVisualStyleBackColor = true;
+            btnAddLineItem.Click += btnAddLineItem_Click;
+            // 
+            // btnSaveInvoice
+            // 
+            btnSaveInvoice.Location = new Point(30, 173);
+            btnSaveInvoice.Name = "btnSaveInvoice";
+            btnSaveInvoice.Size = new Size(92, 34);
+            btnSaveInvoice.TabIndex = 6;
+            btnSaveInvoice.Text = "Save Invoice";
+            btnSaveInvoice.UseVisualStyleBackColor = true;
+            btnSaveInvoice.Click += btnSaveInvoice_Click;
+            // 
+            // chkIsPercentage
+            // 
+            chkIsPercentage.AutoSize = true;
+            chkIsPercentage.Location = new Point(487, 63);
+            chkIsPercentage.Name = "chkIsPercentage";
+            chkIsPercentage.Size = new Size(107, 19);
+            chkIsPercentage.TabIndex = 5;
+            chkIsPercentage.Text = "Is Perecentage?";
+            chkIsPercentage.UseVisualStyleBackColor = true;
+            chkIsPercentage.CheckedChanged += chkIsPercentage_CheckedChanged;
+            // 
+            // cmbPaymentMode
+            // 
+            cmbPaymentMode.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPaymentMode.FormattingEnabled = true;
+            cmbPaymentMode.Items.AddRange(new object[] { "Cash", "Card" });
+            cmbPaymentMode.Location = new Point(128, 126);
+            cmbPaymentMode.Name = "cmbPaymentMode";
+            cmbPaymentMode.Size = new Size(132, 23);
+            cmbPaymentMode.TabIndex = 4;
+            cmbPaymentMode.SelectedIndexChanged += cmbPaymentMode_SelectedIndexChanged;
+            // 
+            // cmbCustomer
+            // 
+            cmbCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCustomer.FormattingEnabled = true;
+            cmbCustomer.Location = new Point(128, 95);
+            cmbCustomer.Name = "cmbCustomer";
+            cmbCustomer.Size = new Size(132, 23);
+            cmbCustomer.TabIndex = 4;
+            cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
+            // 
+            // dtInvoiceDate
+            // 
+            dtInvoiceDate.Location = new Point(128, 61);
+            dtInvoiceDate.Name = "dtInvoiceDate";
+            dtInvoiceDate.Size = new Size(132, 23);
+            dtInvoiceDate.TabIndex = 3;
+            dtInvoiceDate.ValueChanged += dtInvoiceDate_ValueChanged;
+            // 
+            // txtInvoiceNumber
+            // 
+            txtInvoiceNumber.Location = new Point(128, 30);
+            txtInvoiceNumber.Name = "txtInvoiceNumber";
+            txtInvoiceNumber.Size = new Size(132, 23);
+            txtInvoiceNumber.TabIndex = 2;
+            txtInvoiceNumber.TextChanged += txtInvoiceNumber_TextChanged;
+            // 
+            // txtDiscountAmount
+            // 
+            txtDiscountAmount.Location = new Point(605, 61);
+            txtDiscountAmount.Name = "txtDiscountAmount";
+            txtDiscountAmount.Size = new Size(100, 23);
+            txtDiscountAmount.TabIndex = 2;
+            txtDiscountAmount.TextChanged += txtDiscountAmount_TextChanged;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(507, 129);
+            label16.Location = new Point(430, 129);
             label16.Name = "label16";
             label16.Size = new Size(67, 15);
             label16.TabIndex = 1;
@@ -107,7 +189,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(507, 95);
+            label15.Location = new Point(430, 95);
             label15.Name = "label15";
             label15.Size = new Size(24, 15);
             label15.TabIndex = 1;
@@ -125,7 +207,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(507, 64);
+            label14.Location = new Point(430, 64);
             label14.Name = "label14";
             label14.Size = new Size(54, 15);
             label14.TabIndex = 1;
@@ -158,33 +240,6 @@
             lblTax.TabIndex = 1;
             lblTax.Text = "9999";
             // 
-            // lblPaymentMode
-            // 
-            lblPaymentMode.AutoSize = true;
-            lblPaymentMode.Location = new Point(128, 129);
-            lblPaymentMode.Name = "lblPaymentMode";
-            lblPaymentMode.Size = new Size(31, 15);
-            lblPaymentMode.TabIndex = 1;
-            lblPaymentMode.Text = "9999";
-            // 
-            // lblDiscount
-            // 
-            lblDiscount.AutoSize = true;
-            lblDiscount.Location = new Point(605, 64);
-            lblDiscount.Name = "lblDiscount";
-            lblDiscount.Size = new Size(31, 15);
-            lblDiscount.TabIndex = 1;
-            lblDiscount.Text = "9999";
-            // 
-            // lblCustomer
-            // 
-            lblCustomer.AutoSize = true;
-            lblCustomer.Location = new Point(128, 95);
-            lblCustomer.Name = "lblCustomer";
-            lblCustomer.Size = new Size(31, 15);
-            lblCustomer.TabIndex = 1;
-            lblCustomer.Text = "9999";
-            // 
             // lblSubTotal
             // 
             lblSubTotal.AutoSize = true;
@@ -194,32 +249,14 @@
             lblSubTotal.TabIndex = 1;
             lblSubTotal.Text = "9999";
             // 
-            // lblInvoiceDate
-            // 
-            lblInvoiceDate.AutoSize = true;
-            lblInvoiceDate.Location = new Point(128, 64);
-            lblInvoiceDate.Name = "lblInvoiceDate";
-            lblInvoiceDate.Size = new Size(31, 15);
-            lblInvoiceDate.TabIndex = 1;
-            lblInvoiceDate.Text = "9999";
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(507, 38);
+            label9.Location = new Point(430, 38);
             label9.Name = "label9";
             label9.Size = new Size(57, 15);
             label9.TabIndex = 1;
             label9.Text = "Sub-Total";
-            // 
-            // lblInvoiceNumber
-            // 
-            lblInvoiceNumber.AutoSize = true;
-            lblInvoiceNumber.Location = new Point(128, 38);
-            lblInvoiceNumber.Name = "lblInvoiceNumber";
-            lblInvoiceNumber.Size = new Size(31, 15);
-            lblInvoiceNumber.TabIndex = 1;
-            lblInvoiceNumber.Text = "9999";
             // 
             // label1
             // 
@@ -241,17 +278,18 @@
             dgvLineItems.ReadOnly = true;
             dgvLineItems.RowTemplate.Height = 25;
             dgvLineItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLineItems.Size = new Size(800, 265);
+            dgvLineItems.Size = new Size(976, 329);
             dgvLineItems.TabIndex = 0;
             // 
-            // InvoiceDetailsForm
+            // InvoiceAddForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(976, 556);
             Controls.Add(splitContainer1);
-            Name = "InvoiceDetailsForm";
-            Text = "InvoiceDetailsForm";
+            Name = "InvoiceAddForm";
+            Text = "InvoiceAddForm";
+            Load += InvoiceAddForm_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -264,7 +302,6 @@
         #endregion
 
         private SplitContainer splitContainer1;
-        private DataGridView dgvLineItems;
         private Label label16;
         private Label label4;
         private Label label15;
@@ -273,13 +310,17 @@
         private Label label2;
         private Label lblGrandTotal;
         private Label lblTax;
-        private Label lblPaymentMode;
-        private Label lblDiscount;
-        private Label lblCustomer;
         private Label lblSubTotal;
-        private Label lblInvoiceDate;
         private Label label9;
-        private Label lblInvoiceNumber;
         private Label label1;
+        private DataGridView dgvLineItems;
+        private TextBox txtInvoiceNumber;
+        private TextBox txtDiscountAmount;
+        private ComboBox cmbPaymentMode;
+        private ComboBox cmbCustomer;
+        private DateTimePicker dtInvoiceDate;
+        private Button btnSaveInvoice;
+        private CheckBox chkIsPercentage;
+        private Button btnAddLineItem;
     }
 }
