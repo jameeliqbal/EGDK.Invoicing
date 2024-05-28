@@ -110,7 +110,7 @@ namespace EGDK.Invoicing.WinCS.Invoices
                 MessageBox.Show(errMessage, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+         
         private string SaveInvoice()
         {
            var Invoice =invoiceService.CreateInvoice(newInvoice);
